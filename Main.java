@@ -259,7 +259,6 @@ public class Main{
 					d.comprarproduto();
 
 				
-					listEletronicos.size();
 			
 			}
 }
