@@ -1,0 +1,40 @@
+package av2;
+
+public class Shampoo extends Higiene   {
+
+	public static void main(String[] args) {
+
+
+		Higiene Seda = new Higiene();
+		Seda.setTipo("Shampoo");
+		Seda.setFabricante("Seda");
+		Seda.setCoddebarras(0003);
+		Seda.setPesoliquido(500);
+		Seda.setPreco(4.60);
+		ListHigiene.add(Seda);
+
+		Higiene Tresseme= new Higiene();
+		Tresseme.setTipo("Shampoo");
+		Tresseme.setFabricante("Tresemé");
+		Tresseme.setCoddebarras(0003);
+		Tresseme.setPesoliquido(800);
+		Tresseme.setPreco(8.60);
+
+		ListHigiene.add(Tresseme);
+		
+		for (Eletronicos obj1 : listEletronicos) {
+
+			System.out.println("--------MENU ELETRÔNICOS-------");
+			System.out.println("Tipo:  " + obj1.getTipo());
+			System.out.println("Cor:  " + obj1.getCor());
+			System.out.println("Fabricante:  " + obj1.getFabricante());
+			System.out.println("Altura:  " + obj1.getAltura());
+			System.out.println("Largura:  " + obj1.getLargura());
+			System.out.println("Preço:  " + obj1.getPreco());
+			System.out.println("Nºserie:  " + obj1.getCod());
+			System.out.println("--------------------------------");
+
+		}
+
+	}
+}
