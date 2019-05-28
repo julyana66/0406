@@ -1,0 +1,41 @@
+package av2;
+
+
+public class Arroz extends Alimentos {
+
+
+	public static void main(String[] args) {
+
+		Alimentos Arroz = new Alimentos();
+		Arroz.setTipo("Arroz branco");
+		Arroz.setPeso("1.5kg");
+		Arroz.setCodigodebarras(002);
+		Arroz.setFabricante("AMIL");
+		Arroz.setPreco(5.00);
+		ListAlimentos.add(Arroz);
+
+
+		Alimentos ArrozArbóreo = new Alimentos();
+		ArrozArbóreo.setTipo("Arroz Arboreo");
+		ArrozArbóreo.setPeso("1.5kg");
+		ArrozArbóreo.setFabricante("RR Arroz");
+		ArrozArbóreo.setCodigodebarras(002);
+		ArrozArbóreo.setPreco(5.30);
+		ListAlimentos.add(ArrozArbóreo);
+
+		for (Eletronicos obj1 : listEletronicos) {
+
+			System.out.println("--------MENU ELETRÔNICOS-------");
+			System.out.println("Tipo:  " + obj1.getTipo());
+			System.out.println("Cor:  " + obj1.getCor());
+			System.out.println("Fabricante:  " + obj1.getFabricante());
+			System.out.println("Altura:  " + obj1.getAltura());
+			System.out.println("Largura:  " + obj1.getLargura());
+			System.out.println("Preço:  " + obj1.getPreco());
+			System.out.println("Nºserie:  " + obj1.getCod());
+			System.out.println("--------------------------------");
+
+		}
+
+	}
+}
