@@ -22,19 +22,16 @@ public class Sabonete extends Higiene   {
 		even.setPreco(0.95);
 		ListHigiene.add(even);
 		
-		for (Eletronicos obj1 : listEletronicos) {
+for (Higiene obj3 : ListHigiene) {
+	System.out.println("--------MENU HIGIÊNE-------");
+	System.out.println("Tipo:  " + obj3.getTipo());
+	System.out.println("Fabricante:  " + obj3.getFabricante());
+	System.out.println("Peso:  " + obj3.getPesoliquido());
+	System.out.println(("Preço:  " + obj3.getPreço()));
+	System.out.println("Codigo de barras:  " + obj3.getCoddebarras());
+	System.out.println("---------------------------");
 
-			System.out.println("--------MENU ELETRÔNICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
-
-		}
+}
 
 
 	}
