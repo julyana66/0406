@@ -23,19 +23,16 @@ public class Carne extends Alimentos {
 		Maminha.setPreco(25.00);
 		ListAlimentos.add(Maminha);
 		
-		for (Eletronicos obj1 : listEletronicos) {
+for (Alimentos obj2 : ListAlimentos) {
+	System.out.println("--------MENU ALIMENTOS-------");
+	System.out.println("Tipo:  " + obj2.getTipo());
+	System.out.println("Fabricante  :" + obj2.getFabricante());
+	System.out.println("Peso: "+obj2.getPeso());
+	System.out.println(("Preço:  " + obj2.getPreço()));
+	System.out.println("Codigo de barras:  " + obj2.getCodigodebarras());
+	System.out.println("------------------------------");
 
-			System.out.println("--------MENU ELETRÔNICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
-
-		}
+}
 
 	}
 }
