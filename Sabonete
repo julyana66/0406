@@ -1,0 +1,41 @@
+package av2;
+
+public class Sabonete extends Higiene   {
+
+
+	public static void main(String[] args) {
+
+
+		Higiene dove = new Higiene();
+		dove.setTipo("Sabonete");
+		dove.setFabricante("Dove");
+		dove.setCoddebarras(0001);
+		dove.setPesoliquido(30);
+		dove.setPreco(1.00);
+		ListHigiene.add(dove);
+
+		Higiene even = new Higiene();
+		even.setTipo("Sabonete");
+		even.setFabricante("Even");
+		even.setCoddebarras(0001);
+		even.setPesoliquido(25);
+		even.setPreco(0.95);
+		ListHigiene.add(even);
+		
+		for (Eletronicos obj1 : listEletronicos) {
+
+			System.out.println("--------MENU ELETRÔNICOS-------");
+			System.out.println("Tipo:  " + obj1.getTipo());
+			System.out.println("Cor:  " + obj1.getCor());
+			System.out.println("Fabricante:  " + obj1.getFabricante());
+			System.out.println("Altura:  " + obj1.getAltura());
+			System.out.println("Largura:  " + obj1.getLargura());
+			System.out.println("Preço:  " + obj1.getPreco());
+			System.out.println("Nºserie:  " + obj1.getCod());
+			System.out.println("--------------------------------");
+
+		}
+
+
+	}
+	}
