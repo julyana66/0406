@@ -27,7 +27,7 @@ for (Higiene obj3 : ListHigiene) {
 	System.out.println("Tipo:  " + obj3.getTipo());
 	System.out.println("Fabricante:  " + obj3.getFabricante());
 	System.out.println("Peso:  " + obj3.getPesoliquido());
-	System.out.println(("Preço:  " + obj3.getPreço()));
+	System.out.println(("Preço:  " + obj3.getPreco()));
 	System.out.println("Codigo de barras:  " + obj3.getCoddebarras());
 	System.out.println("---------------------------");
 
