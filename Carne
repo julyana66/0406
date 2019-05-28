@@ -1,0 +1,41 @@
+package av2;
+
+
+public class Carne extends Alimentos {
+
+
+	public static void main(String[] args) {
+
+		Alimentos Picanha = new Alimentos();
+		Picanha.setTipo("Picanha");
+		Picanha.setPeso("2kg");
+		Picanha.setCodigodebarras(003);
+		Picanha.setFabricante("Friboi");
+		Picanha.setPreco(45.00);
+		ListAlimentos.add(Picanha);
+
+
+		Alimentos Maminha= new Alimentos();
+		Maminha.setTipo("Maminha");
+		Maminha.setPeso("1kg");
+		Maminha.setCodigodebarras(003);
+		Maminha.setFabricante("Masterboi");
+		Maminha.setPreco(25.00);
+		ListAlimentos.add(Maminha);
+		
+		for (Eletronicos obj1 : listEletronicos) {
+
+			System.out.println("--------MENU ELETRÔNICOS-------");
+			System.out.println("Tipo:  " + obj1.getTipo());
+			System.out.println("Cor:  " + obj1.getCor());
+			System.out.println("Fabricante:  " + obj1.getFabricante());
+			System.out.println("Altura:  " + obj1.getAltura());
+			System.out.println("Largura:  " + obj1.getLargura());
+			System.out.println("Preço:  " + obj1.getPreco());
+			System.out.println("Nºserie:  " + obj1.getCod());
+			System.out.println("--------------------------------");
+
+		}
+
+	}
+}
