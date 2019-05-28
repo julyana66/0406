@@ -28,7 +28,7 @@ for (Alimentos obj2 : ListAlimentos) {
 	System.out.println("Tipo:  " + obj2.getTipo());
 	System.out.println("Fabricante  :" + obj2.getFabricante());
 	System.out.println("Peso: "+obj2.getPeso());
-	System.out.println(("Preço:  " + obj2.getPreço()));
+	System.out.println(("Preço:  " + obj2.getPreco()));
 	System.out.println("Codigo de barras:  " + obj2.getCodigodebarras());
 	System.out.println("------------------------------");
 
