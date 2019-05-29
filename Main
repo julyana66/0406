@@ -48,9 +48,9 @@ public class Main extends Produtos {
 
 				do {
 
-					System.out.println("1 - Eletrônicos ");
-					System.out.println("2 - Alimentos ");
-					System.out.println("3 - Higiene ");
+					System.out.println("1 - Eletrônicos == TV | SOM | SMARTPHONE ==");
+					System.out.println("2 - Alimentos == ARROZ| FEIJAO | CARNE ==");
+					System.out.println("3 - Higiene == SHAMPOO | SABONETE | CREME DENTAL ==");
 					System.out.println("4 - Voltar");
 
 					op = sc.nextInt();
