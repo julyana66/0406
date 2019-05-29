@@ -26,20 +26,7 @@ public class Som extends Eletronicos {
 		xtrememax.setPreco(1800);
 		listEletronicos.add(xtrememax);
 		
-		
-		for (Eletronicos obj1 : listEletronicos) {
-
-			System.out.println("--------MENU ELETRÔNICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
-
-		}
+	
 
 	}
 
