@@ -21,15 +21,8 @@ public class CremeDental extends Higiene   {
 		OralB.setPreco(1.10);
 		ListHigiene.add(OralB);	
 		
-					for (Alimentos obj3 : ListHigiene) {
+		
 
-						System.out.println("--------MENU HIGIENE-------");
-						System.out.println("Tipo:  " + obj3.getTipo());
-						System.out.println("Fabricante:  " + obj3.getFabricante());
-						System.out.println("Cor:  " + obj3.getPeso());
-						System.out.println("Preço:  " + obj3.getPreco());
-						System.out.println("Nºserie:  " + obj3.getCodigodebarras());
-						System.out.println("--------------------------------");
 
 
 
