@@ -10,6 +10,11 @@ public class Eletronicos extends Produtos{
 	private int volume;
 	
 	
+	public String showProduto() {
+		return "TV" + fabricante + "com " + largura + "de largura" + " " + altura + " de altura" + " "+"código" + cod;
+		
+	}
+	
 
 	public Eletronicos(){
 
