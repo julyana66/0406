@@ -4,7 +4,7 @@ public class Smartphone extends Eletronicos {
 
 	public static void main(String[] args) {
 
-		
+
 		Eletronicos Galaxy = new Eletronicos();
 		Galaxy.setTipo("Smartphone");
 		Galaxy.setCor("cinza");
@@ -24,30 +24,14 @@ public class Smartphone extends Eletronicos {
 		Zplus.setLargura(0.44);
 		Zplus.setPreco(1300);
 		listEletronicos.add(Zplus);
-		
-		
-		for (Eletronicos obj1 : listEletronicos) {
 
-			System.out.println("--------MENU ELETRÔNICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
 
-		}
 	}
 
 	public void ligação(){
 		System.out.println("Digite o numero de telefone desejado");
 
 	}
-
-
-
 
 
 }
