@@ -4,13 +4,18 @@ import java.util.ArrayList;
 
 public abstract class Produtos {
 
-	private String tipo;
-	private double preco;
-	private String fabricante;
-	
+
+
+	protected String tipo;
+	protected double preco;
+	protected String fabricante;
+	public int id;
+
+
 	static ArrayList<Eletronicos> listEletronicos = new ArrayList<Eletronicos>();
 	static ArrayList<Alimentos> ListAlimentos = new ArrayList<Alimentos>();
 	static ArrayList<Higiene> ListHigiene = new ArrayList<Higiene>();
+	
 
 	public String getTipo() {
 		return tipo;
