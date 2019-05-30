@@ -1,11 +1,10 @@
-package av2;
-
+package projetoav2;
 
 public class Eletronicos extends Produtos{
 
 	private String cor;
-	private double largura;
-	private double altura;
+	private String largura;
+	private String altura;
 	private double cod;
 	private int volume;
 	
@@ -20,7 +19,7 @@ public class Eletronicos extends Produtos{
 
 	}
 
-	public Eletronicos(String cor, double largura,double altura, double cod, int volume){
+	public Eletronicos(String cor, String largura,String altura, double cod, int volume){
 
 
 		this.cor=cor;
@@ -42,22 +41,22 @@ public class Eletronicos extends Produtos{
 	}
 
 
-	public double getAltura(){
+	public String getAltura(){
 		return altura;
 
 	}
 
-	public void setAltura(double altura){
+	public void setAltura(String altura){
 		this.altura = altura;
 
 	}
 
-	public double getLargura(){
+	public String getLargura(){
 		return largura;
 
 	}
 
-	public void setLargura(double largura){
+	public void setLargura(String largura){
 		this.largura = largura;
 
 	}
@@ -72,7 +71,6 @@ public class Eletronicos extends Produtos{
 
 	}
 
-
 	public int getVolume(){
 		return volume;
 
@@ -83,23 +81,42 @@ public class Eletronicos extends Produtos{
 
 	}
 
-	public void ligar() {
-		System.out.println("ligado");
+	
+	// funcionalidades
+	
+	public boolean ligar (boolean status)
+    {
+        System.out.println("Ligado");
+        return status==true;
+    }
+	
+	 public boolean desligar (boolean status)
+     {
+     System.out.println("desligado");
+     return status;
+     }
 
-	}
-
-	public void desligar(){
-		System.out.println("desligado");
-
-	}
-
-	public int aumentarsom(int getvolume){
-		return getvolume;
-
-	}
+     public void aumentarVolume(int volume)
+     {
+         volume++;
+         System.out.println(volume);
+     }
 
 
-	public int mostrarcodigo(int getcod){
+     public void diminuirVolume (int volume)
+     {
+         if (volume!=0) {
+    	 volume--;
+         }
+         else { 
+        	 System.out.println("O volume é 0");
+         		}
+         
+       System.out.println(volume);
+     }
+
+
+     public int mostrarcodigo(int getcod){
 		return getcod;
 
 	}
@@ -109,21 +126,22 @@ public class Eletronicos extends Produtos{
 
 	}
 
-	public double mostrarlargura(double largura){
+	public String mostrarlargura(String largura){
 		return getLargura();
 
 	}
 
-	public double mostraraltura(double altura){
+	public String mostraraltura(String altura){
 		return getAltura();
 
 	}
 
-
+	public void comprou()
+ 	{
+		
+ 	}
 
 }
-
-
 
 
 
