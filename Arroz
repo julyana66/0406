@@ -1,5 +1,4 @@
-package av2;
-
+package projetoav2;
 
 public class Arroz extends Alimentos {
 
@@ -23,16 +22,18 @@ public class Arroz extends Alimentos {
 		ArrozArbóreo.setPreco(5.30);
 		ListAlimentos.add(ArrozArbóreo);
 
-for (Alimentos obj2 : ListAlimentos) {
-	System.out.println("--------MENU ALIMENTOS-------");
-	System.out.println("Tipo:  " + obj2.getTipo());
-	System.out.println("Fabricante  :" + obj2.getFabricante());
-	System.out.println("Peso: "+obj2.getPeso());
-	System.out.println(("Preço:  " + obj2.getPreco()));
-	System.out.println("Codigo de barras:  " + obj2.getCodigodebarras());
-	System.out.println("------------------------------");
+		
+		for (Alimentos obj2 : ListAlimentos) {
 
-}
+			System.out.println("--------MENU ALIMENTOS-------");
+			System.out.println("Tipo:  " + obj2.getTipo());
+			System.out.println("Fabricante:  " + obj2.getFabricante());
+			System.out.println("Peso: " + obj2.getPeso());
+			System.out.println("Preço:  " + obj2.getPreco());
+			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
+			System.out.println("--------------------------------");
 
 	}
-}
+
+	}
+	}
