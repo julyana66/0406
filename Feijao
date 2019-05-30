@@ -1,37 +1,37 @@
-package av2;
+package projetoav2;
 
-
-public class Arroz extends Alimentos {
+public class Feijao extends Alimentos {
 
 
 	public static void main(String[] args) {
 
-		Alimentos Arroz = new Alimentos();
-		Arroz.setTipo("Arroz branco");
-		Arroz.setPeso("1.5kg");
-		Arroz.setCodigodebarras(002);
-		Arroz.setFabricante("AMIL");
-		Arroz.setPreco(5.00);
-		ListAlimentos.add(Arroz);
+		
+		Alimentos feijao= new Alimentos();
+		feijao.setTipo(" Feijao macassar");
+		feijao.setPeso("1kg");
+		feijao.setFabricante("Turquesa");
+		feijao.setCodigodebarras(001);
+		feijao.setPreco(7.00);
+		ListAlimentos.add(feijao);
 
+		Alimentos feijaoPreto = new Alimentos();
+		feijaoPreto.setTipo("Feijao Preto");
+		feijaoPreto.setPeso("1Kg");
+		feijaoPreto.setFabricante("KI CALDO");
+		feijaoPreto.setCodigodebarras(001);
+		feijaoPreto.setPreco(7.20);
+		ListAlimentos.add(feijaoPreto);
 
-		Alimentos ArrozArbóreo = new Alimentos();
-		ArrozArbóreo.setTipo("Arroz Arboreo");
-		ArrozArbóreo.setPeso("1.5kg");
-		ArrozArbóreo.setFabricante("RR Arroz");
-		ArrozArbóreo.setCodigodebarras(002);
-		ArrozArbóreo.setPreco(5.30);
-		ListAlimentos.add(ArrozArbóreo);
-for (Alimentos obj2 : ListAlimentos) {
-	System.out.println("--------MENU ALIMENTOS-------");
-	System.out.println("Tipo:  " + obj2.getTipo());
-	System.out.println("Fabricante  :" + obj2.getFabricante());
-	System.out.println("Peso: "+obj2.getPeso());
-	System.out.println(("Preço:  " + obj2.getPreco()));
-	System.out.println("Codigo de barras:  " + obj2.getCodigodebarras());
-	System.out.println("------------------------------");
+		for (Alimentos obj2 : ListAlimentos) {
 
-}
+			System.out.println("--------MENU ALIMENTOS-------");
+			System.out.println("Tipo:  " + obj2.getTipo());
+			System.out.println("Fabricante:  " + obj2.getFabricante());
+			System.out.println("Peso: " + obj2.getPeso());
+			System.out.println("Preço:  " + obj2.getPreco());
+			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
+			System.out.println("--------------------------------");
 
 	}
+}
 }
