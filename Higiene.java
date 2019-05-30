@@ -1,5 +1,4 @@
-package av2;
-
+package projetoav2;
 
 public class Higiene extends Produtos {
 
@@ -46,6 +45,9 @@ public class Higiene extends Produtos {
 	}
 
 
+	
+	// funcionalidades
+	
 	public float mostrarPesoLiq (float pesoliquido){
 		return getPesoliquido();
 
