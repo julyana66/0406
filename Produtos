@@ -1,21 +1,20 @@
-package av2;
-
+package projetoav2;
 import java.util.ArrayList;
 
 public abstract class Produtos {
-
-
-
+	
+	
 	protected String tipo;
 	protected double preco;
-	protected String fabricante;
-	public int id;
-
-
-	static ArrayList<Eletronicos> listEletronicos = new ArrayList<Eletronicos>();
-	static ArrayList<Alimentos> ListAlimentos = new ArrayList<Alimentos>();
-	static ArrayList<Higiene> ListHigiene = new ArrayList<Higiene>();
+	public String fabricante;
 	
+		static ArrayList<Eletronicos> listEletronicos = new ArrayList<Eletronicos>();
+		static ArrayList<Alimentos> ListAlimentos = new ArrayList<Alimentos>();
+		static ArrayList<Higiene> ListHigiene = new ArrayList<Higiene>();
+		public static int id;
+		
+		
+		
 
 	public String getTipo() {
 		return tipo;
@@ -49,4 +48,3 @@ public abstract class Produtos {
 	}
 
 
-}
