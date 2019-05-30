@@ -1,5 +1,4 @@
-package av2;
-
+package projetoav2;
 
 public class Carne extends Alimentos {
 
@@ -7,7 +6,6 @@ public class Carne extends Alimentos {
 	public static void main(String[] args) {
 
 		Alimentos Picanha = new Alimentos();
-		Picanha.setTipo("Picanha");
 		Picanha.setPeso("2kg");
 		Picanha.setCodigodebarras(003);
 		Picanha.setFabricante("Friboi");
@@ -23,7 +21,18 @@ public class Carne extends Alimentos {
 		Maminha.setPreco(25.00);
 		ListAlimentos.add(Maminha);
 		
-	
+		for (Alimentos obj2 : ListAlimentos) {
+
+			System.out.println("--------MENU ALIMENTOS-------");
+			System.out.println("Tipo:  " + obj2.getTipo());
+			System.out.println("Fabricante:  " + obj2.getFabricante());
+			System.out.println("Peso: " + obj2.getPeso());
+			System.out.println("Preço:  " + obj2.getPreco());
+			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
+			System.out.println("--------------------------------");
+
 
 	}
-}
+
+	}
+	}
