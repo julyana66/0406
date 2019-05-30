@@ -1,5 +1,4 @@
-package av2;
-
+package projetoav2;
 
 public class Alimentos extends Produtos {
 
@@ -7,7 +6,7 @@ public class Alimentos extends Produtos {
 	private String peso;
 	private double codigodebarras;
 
-
+	
 	public String getPeso() { 
 		return peso; 
 	}
@@ -25,6 +24,9 @@ public class Alimentos extends Produtos {
 	}
 
 
+	
+	// FUNCIONALIDADES
+	
 	public String mostrarpeso (String peso)	{
 		return getPeso();
 	}
@@ -34,6 +36,18 @@ public class Alimentos extends Produtos {
 		return codigodebarras;
 	}
 
+	public String mostrartipo (String tipo)
+    {
+        return getTipo();
+    }
+
+    public void comprarproduto()
+    {
+    System.out.println("O produto está no carrinho");
+    }
+
+
+}
 
 
 }
