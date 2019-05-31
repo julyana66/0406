@@ -1,17 +1,45 @@
-package av2;
+package projetoav2;
 
-public class Smartphone extends Eletronicos {
+import java.util.Scanner;
 
+public class Smarthfone extends Eletronicos {
+	   
+public void ligação(){
+ int num;
+ Scanner lig = new Scanner(System.in);
+ System.out.println("digite o nº que deseja ligar?");
+ num=lig.nextInt();
+ System.out.println("ligando para"+num);
+}
+public void comprou(String smarthfone) {
+System.out.println("Smarthfone está no carrinho");
+			}
+
+void mostrar(){ 
+
+	for (Eletronicos obj1 : listEletronicos) {
+
+	System.out.println("--------MENU ELETRÔNICOS-------");
+	System.out.println("Tipo:  " + obj1.getTipo());
+	System.out.println("Cor:  " + obj1.getCor());
+	System.out.println("Fabricante:  " + obj1.getFabricante());
+	System.out.println("Altura:  " + obj1.getAltura());
+	System.out.println("Largura:  " + obj1.getLargura());
+	System.out.println("Preço:  " + obj1.getPreco());
+	System.out.println("Nºserie:  " + obj1.getCod());
+	System.out.println("--------------------------------");
+	}
+}
+	
 	public static void main(String[] args) {
-
 
 		Eletronicos Galaxy = new Eletronicos();
 		Galaxy.setTipo("Smartphone");
 		Galaxy.setCor("cinza");
 		Galaxy.setFabricante("Samsung");
 		Galaxy.setCod(05);
-		Galaxy.setAltura(0.75);
-		Galaxy.setLargura(0.33);
+		Galaxy.setAltura("0.75");
+		Galaxy.setLargura("0.33");
 		Galaxy.setPreco(1000);    
 		listEletronicos.add(Galaxy);
 
@@ -20,18 +48,11 @@ public class Smartphone extends Eletronicos {
 		Zplus.setCor("preto");
 		Zplus.setFabricante("Motorola");
 		Zplus.setCod(06);
-		Zplus.setAltura(0.60);
-		Zplus.setLargura(0.44);
+		Zplus.setAltura("0.60");
+		Zplus.setLargura("0.44");
 		Zplus.setPreco(1300);
 		listEletronicos.add(Zplus);
-
-
+		
 	}
-
-	public void ligação(){
-		System.out.println("Digite o numero de telefone desejado");
-
-	}
-
 
 }
