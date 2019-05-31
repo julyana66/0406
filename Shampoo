@@ -1,4 +1,4 @@
-package av2;
+package projetoav2;
 
 public class Shampoo extends Higiene   {
 
@@ -19,11 +19,18 @@ public class Shampoo extends Higiene   {
 		Tresseme.setCoddebarras(0003);
 		Tresseme.setPesoliquido(800);
 		Tresseme.setPreco(8.60);
-
 		ListHigiene.add(Tresseme);
 		
-		
-	
+		for (Higiene obj3 : ListHigiene) {
+
+			System.out.println("--------MENU HIGIENE-------");
+			System.out.println("Tipo:  " + obj3.getTipo());
+			System.out.println("Fabricante:  " + obj3.getFabricante());
+			System.out.println("Peso liquido: " + obj3.getPesoliquido());
+			System.out.println("Preço:  " + obj3.getPreco());
+			System.out.println("Nºserie:  " + obj3.getCoddebarras());
+			System.out.println("--------------------------------");
 
 	}
+}
 }
