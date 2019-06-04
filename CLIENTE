@@ -1,0 +1,302 @@
+package cadastro;
+
+import java.util.ArrayList;
+
+import java.util.List;
+import java.util.Scanner;
+
+import basicas.Alimento;
+import basicas.Eletronico;
+import basicas.Higiene;
+import basicas.Produto;
+import produtos.Arroz;
+import produtos.Carne;
+import produtos.CremeDental;
+import produtos.Feijao;
+import produtos.Sabonete;
+import produtos.Shampoo;
+import produtos.Smartphone;
+import produtos.Som;
+import produtos.Tv;
+
+
+
+public class Cliente extends Carrinho {
+
+	//Listas das categorias
+
+	static ArrayList<Eletronico> listEletronicos = new ArrayList<Eletronico>();
+	static ArrayList<Alimento> listAlimentos = new ArrayList<Alimento>();
+	static ArrayList<Higiene> listHigiene = new ArrayList<Higiene>();
+
+
+	static List listaSelecionada=null;
+	static int categoriaSelecionada=-1;
+
+	static int index =1;
+
+	// métodos para instanciar os itens (produtos) das categorias
+
+	public static void alimento(){
+		//Instanciamos os produtos da lista Alimentos
+
+		Arroz arroz1 = new Arroz(01, "Arroz Arboreo", "Emocoes", 2.89);
+		Arroz arroz2 = new Arroz(02, "Arroz Japones", "Bauducco", 9.60);
+		Arroz arroz3 = new Arroz(03, "Arroz Integral", "tio joao", 3.30);
+
+		listAlimentos.add(arroz1);
+		listAlimentos.add(arroz2);
+		listAlimentos.add(arroz3);
+
+		Carne carne1= new Carne(04, "Carne Alcatra", "JBS", 21.12);
+		Carne carne2= new Carne(05, "Carne Picanha", "Friboi", 45.02);
+		Carne carne3= new Carne(06, "Carne Maminha", "Friboi", 36.57);
+
+		listAlimentos.add(carne1);
+		listAlimentos.add(carne2);
+		listAlimentos.add(carne3);
+
+	}
+
+
+	public static void eletronico(){
+
+		//Instanciamos os produtos da lista Eletronicos
+
+		Tv tv1 = new Tv(10, "TV Smart 49", "LG", 2.889);
+		Tv tv2 = new Tv(11, "TV led 40", "Panasonic", 1.099);
+		Tv tv3 = new Tv(12, "Tv 4k led 70", "Samsung", 7.330);
+
+		listEletronicos.add(tv1);
+		listEletronicos.add(tv2);
+		listEletronicos.add(tv3);
+
+
+		Som som1 = new Som(13, "Som JBL go", "JBL", 889.00);
+		Som som2 = new Som(14, "Som xtreme", "LG", 1.099);
+		Som som3 = new Som(15, "Som MicroSystem", "Samsung", 330.90);
+
+
+		listEletronicos.add(som1);
+		listEletronicos.add(som2);
+		listEletronicos.add(som3);
+
+
+		Smartphone smartphone1 = new Smartphone(16, "Smartphone G6 PLUS", "Motorola", 1.210);
+		Smartphone smartphone2 = new Smartphone(17, "Smartphone 7s plus", "Iphone", 5.089);
+		Smartphone smartphone3 = new Smartphone(18, "Smartphone S10", "Samsung", 4.899);
+
+
+		listEletronicos.add(smartphone1);
+		listEletronicos.add(smartphone2);
+		listEletronicos.add(smartphone3);
+
+	}
+
+
+	public static void higiene(){
+
+		//Instanciamos os produtos da lista Higiene
+
+		Shampoo shampoo1 = new Shampoo (19, "Shampoo Liso perfeito", "Seda", 8.90);
+		Shampoo shampoo2 = new Shampoo (20, "Shampoo Cachos", "Aussie", 30.50);
+		Shampoo shampoo3 = new Shampoo (21, "Shampoo Anti caspa", "Clear", 15.00);	
+
+
+		shampoo1.setPesoLiquido(200);
+		shampoo1.setnCodBarras("171");
+		listHigiene.add(shampoo1);
+
+		shampoo2.setPesoLiquido(150);
+		shampoo2.setnCodBarras("172");
+		listHigiene.add(shampoo2);
+
+		shampoo3.setPesoLiquido(100);
+		shampoo3.setnCodBarras("173");
+		listHigiene.add(shampoo3);
+
+
+		CremeDental cremeDental1 = new CremeDental (22, "Creme Dental Total 12","Colgate", 3.00 );
+		CremeDental cremeDental2 = new CremeDental (23, "Creme Dental Sorriso Pro-White", "Even", 3.90);
+		CremeDental cremeDental3 = new CremeDental (24, "Creme Dental Precision CLEAN", "Oral B", 5.00);
+
+
+		cremeDental1.setPesoLiquido(150);
+		cremeDental1.setnCodBarras("181");
+		listHigiene.add(cremeDental1);
+
+		cremeDental2.setPesoLiquido(90);
+		cremeDental2.setnCodBarras("182");
+		listHigiene.add(cremeDental2);
+
+		cremeDental3.setPesoLiquido(90);
+		cremeDental3.setnCodBarras("183");
+		listHigiene.add(cremeDental3);
+
+
+		Sabonete sabonete1 = new Sabonete (25, "Sabonete Botanicals", "Lux", 2.50);
+		Sabonete sabonete2 = new Sabonete (26, "Sabonete Go Fresh", "Dove", 3.49);
+		Sabonete sabonete3 = new Sabonete (27, "Sabonete Baby", "Johnsons", 2.95);
+
+
+		sabonete1.setPesoLiquido(90);
+		sabonete1.setnCodBarras("191");
+		listHigiene.add(sabonete1);
+
+		sabonete2.setPesoLiquido(80);
+		sabonete2.setnCodBarras("192");
+		listHigiene.add(sabonete2);
+
+		sabonete3.setPesoLiquido(90);
+		sabonete3.setnCodBarras("193");
+		listHigiene.add(sabonete3);
+
+	}
+	
+	public static void addCarrinho (int id) {
+		
+		
+
+		for (int i=0; i< listEletronicos.size();i++) {
+			if (listEletronicos.get(i).id == id);
+		}	 carrinho.add();
+		
+		
+		
+	}
+
+
+	// as listas serão rodadas a partir do paramemtro passado no scanner
+
+	public static void main(String[] args) {
+
+
+		alimento();
+		eletronico ();
+		higiene();
+
+		Scanner sc = new Scanner(System.in);
+
+		boolean sair=false;
+
+		while(!sair) {
+			sair = home(sc);
+		}
+
+
+	}
+
+	public static boolean home(Scanner sc) {
+		System.out.println("====== APSMART COMPRAS ======");
+		System.out.println("Acesse nosso menu e escolha a categoria que deseja");
+		System.out.println("ou consulte seu carrinho de compras");
+		System.out.println("1 - Produtos Eletronicos");
+		System.out.println("2 - Produtos de Alimentos");
+		System.out.println("3 - Produtos de Higiene");
+		System.out.println("4 - carrinho de compras ");
+		System.out.println("999 - Sair");
+		int opt=getValor(sc);
+
+		// opcao sair
+
+		if(opt==-1) {
+			return true;
+		}
+
+		// categoria selecionada recebeu como valor -1 (la em cima) para o MENU permanecer visível no loop
+
+		categoriaSelecionada= opt;
+
+		// o parametro passado para o switch vai receber o valor que o usuário digitar no menu
+		switch (categoriaSelecionada) {
+
+		case 1:
+			printList(categoriaSelecionada);	
+			System.out.println("Digite o codigo do seu produto");
+
+
+			break;
+
+		case 2:
+			printList(categoriaSelecionada);
+			System.out.println("Digite o codigo do seu produto");
+
+			break;
+
+		case 3:
+
+			printList(categoriaSelecionada);
+			System.out.println("Digite o codigo do seu produto");
+
+			break;
+
+		case 4:
+			
+			printList(categoriaSelecionada);
+			System.out.println("Itens do Carrinho: ");
+
+
+			break;
+			
+			default:
+			System.out.println("...:::Opcao invlida:::...");
+
+			break;
+		}
+		return false;
+	}
+
+
+	// esse método facilita a apresentação das listas e será chamado no switch case
+	public static void printList(int opc) {
+
+		listaSelecionada=null;
+		if(opc ==1) {
+			listaSelecionada = listEletronicos;
+		} else if(opc ==2) {
+			listaSelecionada= listAlimentos;
+		} else if(opc ==3) {
+			listaSelecionada=listHigiene;
+		} else if (opc==4) {
+			//listaSelecionada=carrinho;
+		}
+
+		// esse FOR imprime os atributos dos objetos, o index vai enumerar 
+
+		for (Object produto : listaSelecionada) {
+			System.out.println(index + "-"+ "Cód (" +((Produto)produto).getId() + ")    " + ((Produto)produto).getTipo() + "  -  " + ((Produto)produto).getFabricante() + " -  R$"+((Produto)produto).getPreco());
+			index++;
+		}
+		System.out.println("0 - Home");
+		System.out.println("999 - Sair");
+
+	}
+
+	public static boolean selecionarProduto(Scanner sc) {
+		return false;
+		
+	} 
+	
+	
+
+	// esse getValor
+	public static int getValor(Scanner sc){
+
+		int opt = sc.nextInt();
+
+		if(opt==999) {
+			return -1;
+		}
+		if(opt==0) {
+			return 0;
+		}
+
+		return opt;
+
+	}
+
+
+
+
+
+}
