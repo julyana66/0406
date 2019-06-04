@@ -1,0 +1,89 @@
+package cadastro;
+
+import java.util.ArrayList;
+
+import basicas.Produto;
+
+public class Carrinho {
+	
+	// o array é do tipo ItemPedido, pois conterá os atributos dessa classe = produto, qtd, preço
+	
+	 public  ArrayList<ItemPedido> carrinho = new ArrayList<ItemPedido>();
+	
+	//inicializamos 2 variáveis globais que serão necessárias para desenvolver os metodos
+	
+	private int totalPedido=0;
+	 
+	
+	/* esse método verifica se o carrinho ja possui um produto que o cliente solicitou, caso ja possua
+	 * vai ser necessário só alterar a quantidade, caso não possua ele vai criar um novo pedido com 
+	 * o produto solicitado e a quantidade passada pelo cliente, esse método ainda verifica se a
+	 * quantidade de produtos no carrinho é no máximo 10, calculando o preço.
+	 */
+	
+	public void addItemPedido(Produto produto, int qtd) {
+			if(totalPedido+qtd<10 && qtd > 0) {
+				
+				boolean encontrou=false;
+				
+				for (ItemPedido pedido : carrinho) {
+						if(pedido.getProduto().equals(produto)) {
+						encontrou=true;
+						pedido.setQtd(pedido.getQtd()+qtd);
+						break;
+					}
+				}
+				
+				if(!encontrou) {
+					carrinho.add(new ItemPedido(produto,qtd));
+				}
+				totalPedido+=qtd;
+			}else if(totalPedido+qtd> 10) {	
+
+				System.out.println("...:::Nao e possivel comprar mais de 10 produtos:::...");
+			}
+			refreshPreco();
+	}
+	
+	public void removeItemPedido(Produto produto, int qtd) {
+		boolean encontrou = false;
+		for (ItemPedido itemPedido : carrinho) {
+			if(itemPedido.getProduto().equals(produto) && qtd > 0) {
+				encontrou= true;
+				if(qtd < itemPedido.getQtd()) {
+					itemPedido.setQtd(itemPedido.getQtd()- qtd);
+					totalPedido-=qtd;
+				}else if(qtd == itemPedido.getQtd()) {
+					carrinho.remove(itemPedido);
+					totalPedido-=qtd;
+				}else if(qtd < itemPedido.getQtd()) {
+					System.out.println("...:::Nao ha tantos itens:::...");
+				}
+				break;
+			}
+		}
+		
+		if(!encontrou) {
+			System.out.println("...:::Item nao encontrado:::...");
+		}
+		
+		refreshPreco();
+		
+	}
+	
+	/* esse método é usado dentro do addItemPedido para recalcular o valor do pedido sempre que um produto é 
+	 * adicionado ou sua quantidade é alterada.
+	 */
+	
+	public void refreshPreco() {
+		this.totalPedido=0;
+		
+		for (ItemPedido itemPedido : carrinho) {
+			double precoItem= itemPedido.getQtd()*itemPedido.getProduto().getPreco();
+			itemPedido.setPrecoItem(precoItem);
+			totalPedido+=precoItem;
+			
+		}
+		
+	}
+}
