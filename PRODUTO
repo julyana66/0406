@@ -1,0 +1,56 @@
+package basicas;
+
+public abstract class Produto {
+	
+	public int id;
+	private String tipo;
+	private String fabricante;
+	private double preco;
+	
+	
+	public Produto(int id, String tipo, String fabricante, double preco) {
+		super();
+		this.id=id;
+		this.tipo = tipo;
+		this.fabricante = fabricante;
+		this.preco = preco;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	
+	public void showPreco() {
+		System.out.println("Este produto custa R$"+getPreco());
+	} 
+}
