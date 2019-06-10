@@ -8,6 +8,7 @@ import java.util.Scanner;
 import basicas.Alimento;
 import basicas.Eletronico;
 import basicas.Higiene;
+import basicas.Pessoa;
 import basicas.Produto;
 import produtos.Arroz;
 import produtos.Carne;
@@ -21,24 +22,21 @@ import produtos.Tv;
 
 
 
-public class Cliente extends Carrinho {
-
-	//Listas das categorias
-
-	static ArrayList<Eletronico> listEletronicos = new ArrayList<Eletronico>();
-	static ArrayList<Alimento> listAlimentos = new ArrayList<Alimento>();
-	static ArrayList<Higiene> listHigiene = new ArrayList<Higiene>();
+public class Cliente {
 
 
-	static List listaSelecionada=null;
-	static int categoriaSelecionada=-1;
+	private ArrayList<Eletronico> listEletronicos = new ArrayList<Eletronico>();
+	private ArrayList<Alimento> listAlimentos = new ArrayList<Alimento>();
+	private ArrayList<Higiene> listHigiene = new ArrayList<Higiene>();
 
-	static int index =1;
 
-	// métodos para instanciar os itens (produtos) das categorias
+	private List listaSelecionada=null;
+	private int categoriaSelecionada=-1;
+	private Carrinho carrinho= new Carrinho();
 
-	public static void alimento(){
-		//Instanciamos os produtos da lista Alimentos
+
+
+	public void alimento(){
 
 		Arroz arroz1 = new Arroz(01, "Arroz Arboreo", "Emocoes", 2.89);
 		Arroz arroz2 = new Arroz(02, "Arroz Japones", "Bauducco", 9.60);
@@ -59,7 +57,8 @@ public class Cliente extends Carrinho {
 	}
 
 
-	public static void eletronico(){
+	public void eletronico(){
+
 
 		//Instanciamos os produtos da lista Eletronicos
 
@@ -93,26 +92,16 @@ public class Cliente extends Carrinho {
 
 	}
 
+	public void higiene(){
 
-	public static void higiene(){
-
-		//Instanciamos os produtos da lista Higiene
 
 		Shampoo shampoo1 = new Shampoo (19, "Shampoo Liso perfeito", "Seda", 8.90);
 		Shampoo shampoo2 = new Shampoo (20, "Shampoo Cachos", "Aussie", 30.50);
 		Shampoo shampoo3 = new Shampoo (21, "Shampoo Anti caspa", "Clear", 15.00);	
 
 
-		shampoo1.setPesoLiquido(200);
-		shampoo1.setnCodBarras("171");
 		listHigiene.add(shampoo1);
-
-		shampoo2.setPesoLiquido(150);
-		shampoo2.setnCodBarras("172");
 		listHigiene.add(shampoo2);
-
-		shampoo3.setPesoLiquido(100);
-		shampoo3.setnCodBarras("173");
 		listHigiene.add(shampoo3);
 
 
@@ -120,17 +109,8 @@ public class Cliente extends Carrinho {
 		CremeDental cremeDental2 = new CremeDental (23, "Creme Dental Sorriso Pro-White", "Even", 3.90);
 		CremeDental cremeDental3 = new CremeDental (24, "Creme Dental Precision CLEAN", "Oral B", 5.00);
 
-
-		cremeDental1.setPesoLiquido(150);
-		cremeDental1.setnCodBarras("181");
 		listHigiene.add(cremeDental1);
-
-		cremeDental2.setPesoLiquido(90);
-		cremeDental2.setnCodBarras("182");
 		listHigiene.add(cremeDental2);
-
-		cremeDental3.setPesoLiquido(90);
-		cremeDental3.setnCodBarras("183");
 		listHigiene.add(cremeDental3);
 
 
@@ -139,54 +119,34 @@ public class Cliente extends Carrinho {
 		Sabonete sabonete3 = new Sabonete (27, "Sabonete Baby", "Johnsons", 2.95);
 
 
-		sabonete1.setPesoLiquido(90);
-		sabonete1.setnCodBarras("191");
 		listHigiene.add(sabonete1);
-
-		sabonete2.setPesoLiquido(80);
-		sabonete2.setnCodBarras("192");
 		listHigiene.add(sabonete2);
-
-		sabonete3.setPesoLiquido(90);
-		sabonete3.setnCodBarras("193");
 		listHigiene.add(sabonete3);
 
 	}
-	
-	public static void addCarrinho (int id) {
-		
-		
 
-		for (int i=0; i< listEletronicos.size();i++) {
-			if (listEletronicos.get(i).id == id);
-		}	 carrinho.add();
-		
-		
-		
-	}
-
-
-	// as listas serão rodadas a partir do paramemtro passado no scanner
 
 	public static void main(String[] args) {
 
+		Cliente cliente = new Cliente();
 
-		alimento();
-		eletronico ();
-		higiene();
+
+
+		cliente.alimento();
+		cliente.eletronico ();
+		cliente.higiene();
 
 		Scanner sc = new Scanner(System.in);
 
 		boolean sair=false;
 
 		while(!sair) {
-			sair = home(sc);
+			sair = cliente.home(sc);
 		}
-
 
 	}
 
-	public static boolean home(Scanner sc) {
+	public boolean home(Scanner sc) {
 		System.out.println("====== APSMART COMPRAS ======");
 		System.out.println("Acesse nosso menu e escolha a categoria que deseja");
 		System.out.println("ou consulte seu carrinho de compras");
@@ -197,106 +157,135 @@ public class Cliente extends Carrinho {
 		System.out.println("999 - Sair");
 		int opt=getValor(sc);
 
-		// opcao sair
 
 		if(opt==-1) {
 			return true;
 		}
 
-		// categoria selecionada recebeu como valor -1 (la em cima) para o MENU permanecer visível no loop
 
 		categoriaSelecionada= opt;
 
-		// o parametro passado para o switch vai receber o valor que o usuário digitar no menu
 		switch (categoriaSelecionada) {
 
 		case 1:
-			printList(categoriaSelecionada);	
-			System.out.println("Digite o codigo do seu produto");
-
-
-			break;
-
 		case 2:
-			printList(categoriaSelecionada);
-			System.out.println("Digite o codigo do seu produto");
-
-			break;
-
 		case 3:
-
-			printList(categoriaSelecionada);
-			System.out.println("Digite o codigo do seu produto");
-
-			break;
-
 		case 4:
-			
-			printList(categoriaSelecionada);
-			System.out.println("Itens do Carrinho: ");
 
+			return printList(categoriaSelecionada, sc);	
 
-			break;
-			
-			default:
+		default:
 			System.out.println("...:::Opcao invlida:::...");
 
 			break;
 		}
+
+		opt= getValor(sc);
+
+		if (opt == 0) {
+			return false;
+
+		} else if (opt == -1) {
+			return true;
+
+		}
+
 		return false;
 	}
 
-
-	// esse método facilita a apresentação das listas e será chamado no switch case
-	public static void printList(int opc) {
+	public boolean printList(int opt, Scanner sc) {
 
 		listaSelecionada=null;
-		if(opc ==1) {
+		if(opt ==1) {
 			listaSelecionada = listEletronicos;
-		} else if(opc ==2) {
+		} else if(opt ==2) {
 			listaSelecionada= listAlimentos;
-		} else if(opc ==3) {
+		} else if(opt ==3) {
 			listaSelecionada=listHigiene;
-		} else if (opc==4) {
-			//listaSelecionada=carrinho;
+		} else if (opt==4) {
+			return printCarrinho(sc);	
 		}
 
-		// esse FOR imprime os atributos dos objetos, o index vai enumerar 
 
-		for (Object produto : listaSelecionada) {
-			System.out.println(index + "-"+ "Cód (" +((Produto)produto).getId() + ")    " + ((Produto)produto).getTipo() + "  -  " + ((Produto)produto).getFabricante() + " -  R$"+((Produto)produto).getPreco());
+
+		int index =1;
+
+		for (Object prod : listaSelecionada) {
+			System.out.println(index + "-"+ "Cód (" +((Produto)prod).getId() + ")    " + ((Produto)prod).getTipo() + "  -  " + ((Produto)prod).getFabricante() + " -  R$"+((Produto)prod).getPreco());
 			index++;
 		}
 		System.out.println("0 - Home");
 		System.out.println("999 - Sair");
 
+		opt = getValor(sc);
+
+		if (opt == 0 ) {
+			return false;
+		} else if (opt == - 1){
+			return true;
+		} else {
+			return escolherItem (sc, opt);
+		}
 	}
 
-	public static boolean selecionarProduto(Scanner sc) {
-		return false;
-		
-	} 
-	
-	
 
-	// esse getValor
-	public static int getValor(Scanner sc){
+
+	public boolean escolherItem (Scanner sc, int opt) {
+
+		if (opt > listaSelecionada.size()-1 || listaSelecionada.get(opt-1) == null) {
+			System.out.println("...:::Opcao invlida:::...");
+		} else { 
+			Produto produtoSelecionado = ((Produto)listaSelecionada.get(opt-1));
+			System.out.println("voce escolheu o item: " + produtoSelecionado.getTipo());
+			System.out.println("quantas unidades voce deseja?");
+			opt = getValor (sc);
+
+			carrinho.addItemPedido(produtoSelecionado,opt);
+
+		}
+		return false;
+
+	}
+
+	public boolean printCarrinho (Scanner sc) {
+		System.out.println("Itens adicionados ao carrinho:");
+		System.out.println("Qtd | produto ........ preço" );
+		boolean encontrou = false;
+
+		for (ItemPedido i : carrinho.getCarrinho()) {
+			encontrou = true;
+			System.out.println(i.getQtd() + " " + i.getProduto().getTipo() + "..........R$: " + i.getPrecoItem() );
+		}
+		if (!encontrou){
+			System.out.println("*****Seu carrinho ainda esta vazio*****");
+
+		} else {	
+			System.out.println("Seu pedido custará R$: " + carrinho.getPrecoTotal());
+
+
+		}
+
+		System.out.println("Selecione 0 pra voltar");
+		int opt = 999;
+		while (opt != 0) {
+			opt = getValor (sc);
+		}
+		return false;
+
+	}
+
+	public int getValor(Scanner sc){
 
 		int opt = sc.nextInt();
 
 		if(opt==999) {
 			return -1;
 		}
-		if(opt==0) {
-			return 0;
-		}
+		else
 
-		return opt;
+			return opt;
 
 	}
 
-
-
-
-
 }
+
