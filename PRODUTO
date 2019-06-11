@@ -27,6 +27,7 @@ public abstract class Produto {
 
 	public String getTipo() {
 		return tipo;
+		
 	}
 
 	public void setTipo(String tipo) {
