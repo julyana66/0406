@@ -1,39 +1,14 @@
-package projetoav2;
+package produtos;
 
-public class Sabonete extends Higiene   {
+import basicas.Higiene;
 
+public class Sabonete extends Higiene {
 
-		public static void main(String[] args) {
+	public Sabonete(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+		// TODO Auto-generated constructor stub
+	}
 
-
-			Higiene dove = new Higiene();
-			dove.setTipo("Sabonete");
-			dove.setFabricante("Dove");
-			dove.setCoddebarras(0001);
-			dove.setPesoliquido(30);
-			dove.setPreco(1.00);
-			ListHigiene.add(dove);
-
-			Higiene even = new Higiene();
-			even.setTipo("Sabonete");
-			even.setFabricante("Even");
-			even.setCoddebarras(0001);
-			even.setPesoliquido(25);
-			even.setPreco(0.95);
-			ListHigiene.add(even);
-			
-			for (Higiene obj3 : ListHigiene) {
-
-				System.out.println("--------MENU HIGIENE-------");
-				System.out.println("Tipo:  " + obj3.getTipo());
-				System.out.println("Fabricante:  " + obj3.getFabricante());
-				System.out.println("Peso liquido: " + obj3.getPesoliquido());
-				System.out.println("Preço:  " + obj3.getPreco());
-				System.out.println("Nºserie:  " + obj3.getCoddebarras());
-				System.out.println("--------------------------------");
-
-
-		}
-		}
 }
+
 
