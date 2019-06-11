@@ -8,7 +8,6 @@ import java.util.Scanner;
 import basicas.Alimento;
 import basicas.Eletronico;
 import basicas.Higiene;
-import basicas.Pessoa;
 import basicas.Produto;
 import produtos.Arroz;
 import produtos.Carne;
@@ -346,5 +345,3 @@ public class Cliente {
 	}
 
 }
-
-
