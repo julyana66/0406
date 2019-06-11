@@ -1,53 +1,44 @@
-package projetoav2;
+package basicas;
 
-public class Alimentos extends Produtos {
-
-
-	private String peso;
-	private double codigodebarras;
+public abstract class Alimento extends Produto{
+ 
+	private double peso;
+	private String nCodBarras;
+	
+	
+	public Alimento(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+	}
+	
+	
+	public double getPeso() {
+		return peso;
+	}
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	public String getnCodBarras() {
+		return nCodBarras;
+	}
+	public void setnCodBarras(String nCodBarras) {
+		this.nCodBarras = nCodBarras;
+	}
 
 	
-	public String getPeso() { 
-		return peso; 
-	}
-
-	public void setPeso(String peso) { 
-		this.peso = peso; 
-	}
-
-	public double getCodigodebarras() { 
-		return codigodebarras;
-	}
-
-	public void setCodigodebarras(double codigodebarras) { 
-		this.codigodebarras = codigodebarras; 
-	}
-
-
+	public void showPeso() {
+		System.out.println("Este produto pesa "+getPeso()+"kg");
+	} 
 	
-	// FUNCIONALIDADES
+	public void showNCodBarras() {
+		System.out.println("O numero de codigo de barras e "+getnCodBarras());
+	}
 	
-	public String mostrarpeso (String peso)	{
-		return getPeso();
+	public void showTipo() {
+		System.out.println("Este produto e "+getTipo());
 	}
-
-
-	public double mostrarcodigo(double codigodebarras){
-		return codigodebarras;
-	}
-
-	public String mostrartipo (String tipo)
-    {
-        return getTipo();
-    }
-
-    public void comprarproduto()
-    {
-    System.out.println("O produto está no carrinho");
-    }
-
-
+	
+	
 }
 
 
-}
+
