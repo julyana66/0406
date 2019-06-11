@@ -1,58 +1,31 @@
-package projetoav2;
+package produtos;
 
-import java.util.Scanner;
+import basicas.Eletronico;
 
-public class Smarthfone extends Eletronicos {
-	   
-public void ligação(){
- int num;
- Scanner lig = new Scanner(System.in);
- System.out.println("digite o nº que deseja ligar?");
- num=lig.nextInt();
- System.out.println("ligando para"+num);
-}
-public void comprou(String smarthfone) {
-System.out.println("Smarthfone está no carrinho");
-			}
-
-void mostrar(){ 
-
-	for (Eletronicos obj1 : listEletronicos) {
-
-	System.out.println("--------MENU ELETRÔNICOS-------");
-	System.out.println("Tipo:  " + obj1.getTipo());
-	System.out.println("Cor:  " + obj1.getCor());
-	System.out.println("Fabricante:  " + obj1.getFabricante());
-	System.out.println("Altura:  " + obj1.getAltura());
-	System.out.println("Largura:  " + obj1.getLargura());
-	System.out.println("Preço:  " + obj1.getPreco());
-	System.out.println("Nºserie:  " + obj1.getCod());
-	System.out.println("--------------------------------");
-	}
-}
+public class Smartphone extends Eletronico{
 	
-	public static void main(String[] args) {
+	public Smartphone(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+	}
 
-		Eletronicos Galaxy = new Eletronicos();
-		Galaxy.setTipo("Smartphone");
-		Galaxy.setCor("cinza");
-		Galaxy.setFabricante("Samsung");
-		Galaxy.setCod(05);
-		Galaxy.setAltura("0.75");
-		Galaxy.setLargura("0.33");
-		Galaxy.setPreco(1000);    
-		listEletronicos.add(Galaxy);
-
-		Eletronicos Zplus = new Eletronicos();
-		Zplus.setTipo("Smartphone");
-		Zplus.setCor("preto");
-		Zplus.setFabricante("Motorola");
-		Zplus.setCod(06);
-		Zplus.setAltura("0.60");
-		Zplus.setLargura("0.44");
-		Zplus.setPreco(1300);
-		listEletronicos.add(Zplus);
+	@Override
+	public void ligar() {
+		System.out.println("liga");
 		
 	}
 
+	@Override
+	public void desligar() {
+		System.out.println("desliga");
+		
+	}
+
+	@Override
+	public void aumentaSom() {
+		System.out.println("Aumenta som");
+	}
+
+	public void fazerChamada() {
+		System.out.println("Alo");
+	}
 }
