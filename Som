@@ -1,58 +1,32 @@
-package projetoav2;
+package produtos;
 
-import java.util.Scanner;
+import basicas.Eletronico;
 
-public class Som extends Eletronicos {
-
-public void mudarestação(){
-	int estacao;
-	Scanner c = new Scanner(System.in);
-	System.out.println("digite a estação que deseja ouvir?");
-	estacao = c.nextInt();
-	System.out.println(estacao);
-}
-
-public void comprou( String som) {
-	System.out.println("O Som está no carrinho");
-}
+public class Som extends Eletronico{
 	
-	public static void main(String[] args) {
-
-		Eletronicos xtreme = new Eletronicos();
-		xtreme.setTipo("Som");
-		xtreme.setCor("vermelho");
-		xtreme.setFabricante("LG");
-		xtreme.setCod(03);
-		xtreme.setAltura("1.8");
-		xtreme.setLargura("1.17");
-		xtreme.setPreco(1599);
-		listEletronicos.add(xtreme);
-
-
-		Eletronicos xtrememax = new Eletronicos();
-		xtrememax.setTipo("Som");
-		xtrememax.setCor("Preto");
-		xtrememax.setFabricante("Panasonic");
-		xtrememax.setCod(04);
-		xtrememax.setAltura("1.10");
-		xtrememax.setLargura("1.22");
-		xtrememax.setPreco(1800);
-		listEletronicos.add(xtrememax);
-		
-		
-		for (Eletronicos obj1 : listEletronicos) {
-
-			System.out.println("--------MENU ELETRÔNICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
-
-		}
-
+	public Som(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
 	}
 
+	@Override
+	public void ligar() {
+		System.out.println("liga");
+		
+	}
+
+	@Override
+	public void desligar() {
+		System.out.println("desliga");
+		
+	}
+
+	@Override
+	public void aumentaSom() {
+		System.out.println("Aumenta som");
+	}
+	
+	
+	public void mudaEstacao() {
+		System.out.println("muda");
+	}
+}
