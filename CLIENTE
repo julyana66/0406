@@ -38,6 +38,7 @@ public class Cliente {
 
 	public void alimento(){
 
+
 		Arroz arroz1 = new Arroz(01, "Arroz Arboreo", "Emocoes", 2.89);
 		Arroz arroz2 = new Arroz(02, "Arroz Japones", "Bauducco", 9.60);
 		Arroz arroz3 = new Arroz(03, "Arroz Integral", "tio joao", 3.30);
@@ -62,9 +63,10 @@ public class Cliente {
 
 		//Instanciamos os produtos da lista Eletronicos
 
-		Tv tv1 = new Tv(10, "TV Smart 49", "LG", 2.889);
-		Tv tv2 = new Tv(11, "TV led 40", "Panasonic", 1.099);
-		Tv tv3 = new Tv(12, "Tv 4k led 70", "Samsung", 7.330);
+
+		Tv tv1 = new Tv(10, "TV Smart 49", "LG", 2889.00);
+		Tv tv2 = new Tv(11, "TV led 40", "Panasonic", 1099.00);
+		Tv tv3 = new Tv(12, "Tv 4k led 70", "Samsung", 7330.00);
 
 		listEletronicos.add(tv1);
 		listEletronicos.add(tv2);
@@ -72,7 +74,7 @@ public class Cliente {
 
 
 		Som som1 = new Som(13, "Som JBL go", "JBL", 889.00);
-		Som som2 = new Som(14, "Som xtreme", "LG", 1.099);
+		Som som2 = new Som(14, "Som xtreme", "LG", 1099.00);
 		Som som3 = new Som(15, "Som MicroSystem", "Samsung", 330.90);
 
 
@@ -81,9 +83,9 @@ public class Cliente {
 		listEletronicos.add(som3);
 
 
-		Smartphone smartphone1 = new Smartphone(16, "Smartphone G6 PLUS", "Motorola", 1.210);
-		Smartphone smartphone2 = new Smartphone(17, "Smartphone 7s plus", "Iphone", 5.089);
-		Smartphone smartphone3 = new Smartphone(18, "Smartphone S10", "Samsung", 4.899);
+		Smartphone smartphone1 = new Smartphone(16, "Smartphone G6 PLUS", "Motorola", 1210.00);
+		Smartphone smartphone2 = new Smartphone(17, "Smartphone 7s plus", "Iphone", 5089.00);
+		Smartphone smartphone3 = new Smartphone(18, "Smartphone S10", "Samsung", 4899.00);
 
 
 		listEletronicos.add(smartphone1);
@@ -94,7 +96,7 @@ public class Cliente {
 
 	public void higiene(){
 
-
+		
 		Shampoo shampoo1 = new Shampoo (19, "Shampoo Liso perfeito", "Seda", 8.90);
 		Shampoo shampoo2 = new Shampoo (20, "Shampoo Cachos", "Aussie", 30.50);
 		Shampoo shampoo3 = new Shampoo (21, "Shampoo Anti caspa", "Clear", 15.00);	
@@ -138,6 +140,10 @@ public class Cliente {
 
 		Scanner sc = new Scanner(System.in);
 
+		/* o boolean pra sair é falso por padrao
+		 * enquanto o cliente não sair (999)
+		 * o menu vai reaparecer 
+		 */
 		boolean sair=false;
 
 		while(!sair) {
@@ -157,7 +163,11 @@ public class Cliente {
 		System.out.println("999 - Sair");
 		int opt=getValor(sc);
 
-
+/* como definimos o valor da variavel categoriaselecionada = -1 (no inicio da classe)
+ * se a categoriaselecionada (aqui embaixo) é igual a opt e opt == -1, sempre vai retornar verdadeiro
+ * ou seja, enquanto a opcao for uma categoria selecionada vai retornar o menu depois, ver na main.
+ * 
+ */
 		if(opt==-1) {
 			return true;
 		}
@@ -165,6 +175,10 @@ public class Cliente {
 
 		categoriaSelecionada= opt;
 
+		/* em qualquer caso do switch a opcao vai retornar o método printList, onde de fato vai haver a
+		 * escolha pela categoria
+		 */
+		
 		switch (categoriaSelecionada) {
 
 		case 1:
@@ -192,7 +206,10 @@ public class Cliente {
 
 		return false;
 	}
-
+	
+	
+	// criamos uma variavel do tipo list para representar os arrays, que sao as categorias
+	
 	public boolean printList(int opt, Scanner sc) {
 
 		listaSelecionada=null;
@@ -203,13 +220,24 @@ public class Cliente {
 		} else if(opt ==3) {
 			listaSelecionada=listHigiene;
 		} else if (opt==4) {
+			//criamos um método para acessar o carrinho de forma detalhada
 			return printCarrinho(sc);	
 		}
 
 
 
+		// esse index é a ordem dos produtos apresentadas, ex. 1- feijao A, 2- feijao B, 3-feiajo C
 		int index =1;
-
+				
+		/* for each para imprimir a listaSelecionada pelo cliente, que é no caso a categoria de produtos
+		 * que ele escolheu, essa forma que usei de pegar o produto "((Produto)prod).getId() " se chama cast
+		 * e é um conceito dentro de polimorfismo, onde convertemos um valor de um tipo para outro tipo
+		 * 
+		 * por ex. numa classe abstrata animal
+		 * onde for necessario usar um animal, eu posso usar um cachorro, mas onde for necessario um cachorro
+		 * eu precisaria de cast para informar que o animal que eu estou passando é um cachorro
+		 * 
+		 */
 		for (Object prod : listaSelecionada) {
 			System.out.println(index + "-"+ "Cód (" +((Produto)prod).getId() + ")    " + ((Produto)prod).getTipo() + "  -  " + ((Produto)prod).getFabricante() + " -  R$"+((Produto)prod).getPreco());
 			index++;
@@ -223,6 +251,12 @@ public class Cliente {
 			return false;
 		} else if (opt == - 1){
 			return true;
+			/*
+			 *  aqui, depois de escolhida a categoria, se a opcao nao for de sair do menu o else retorna 
+			 *  o metodo escolher item, ou seja, depois da apresentacao dos itens existe essa chamada 
+			 *  logo para o cliente escolher o produto e colocar no carrinho atraves do metodo abaixo
+			 */
+			
 		} else {
 			return escolherItem (sc, opt);
 		}
@@ -231,13 +265,26 @@ public class Cliente {
 
 
 	public boolean escolherItem (Scanner sc, int opt) {
+		
+		/* no if se o opt (valor passado pelo cliente - index do produto) for maior que o tamanho da lista, 
+		 * ex. a lista contem 9 itens se o cliente passar a opção 15, retorna opcao invalida, OU,
+		 * se o produto nao existe na lista selecionada (null) tambem
+		 * retorna opcao invalida . O else pega o produto da lista selecionada atraves do get(opt -1)
+		 * e imprime as caracteristicas do produto escolhido pelo cliente
+		 * no fim o carrinho acessa o metodo da classe carrinho (addItemPedido) que tem como parametro
+		 * o produto selecionado e  a opcao escolhida pelo cliente
+		 */
 
 		if (opt > listaSelecionada.size()-1 || listaSelecionada.get(opt-1) == null) {
 			System.out.println("...:::Opcao invlida:::...");
 		} else { 
 			Produto produtoSelecionado = ((Produto)listaSelecionada.get(opt-1));
-			System.out.println("voce escolheu o item: " + produtoSelecionado.getTipo());
+			System.out.println("voce escolheu o item: " + produtoSelecionado.getTipo() + "  " + produtoSelecionado.getFabricante() + "  R$:  " +produtoSelecionado.getPreco());
 			System.out.println("quantas unidades voce deseja?");
+			System.out.println("                              ");
+			System.out.println("                              ");
+
+
 			opt = getValor (sc);
 
 			carrinho.addItemPedido(produtoSelecionado,opt);
@@ -246,20 +293,31 @@ public class Cliente {
 		return false;
 
 	}
-
+	
+/* recebe o scanner passado pelo cliente, no caso o produto escolhido
+ *  
+ */
 	public boolean printCarrinho (Scanner sc) {
 		System.out.println("Itens adicionados ao carrinho:");
-		System.out.println("Qtd | produto ........ preço" );
+		System.out.println("                              ");
+
+		System.out.println("QTD | PRODUTO |...............| PREÇO" );
 		boolean encontrou = false;
 
+		/* se encontrou o produto no carrinho entao vai mostrar alguns detalhes do mesmo
+		 * para que o cliente possa ver o que escolheu, se nao encontrou nada
+		 * mostra a mensagem do carrinho vazio, se o carrinho nao estiver vazio mostra o total das compras
+		 * atraves do getPrecoTotal, que foi a variavel que criamos na classe carrinho
+		 */
 		for (ItemPedido i : carrinho.getCarrinho()) {
 			encontrou = true;
-			System.out.println(i.getQtd() + " " + i.getProduto().getTipo() + "..........R$: " + i.getPrecoItem() );
+			System.out.println(" " + i.getQtd() + "    " + i.getProduto().getTipo() + "..........R$: " + i.getPrecoItem() );
 		}
 		if (!encontrou){
 			System.out.println("*****Seu carrinho ainda esta vazio*****");
 
 		} else {	
+			System.out.println("                                                 ");
 			System.out.println("Seu pedido custará R$: " + carrinho.getPrecoTotal());
 
 
@@ -288,4 +346,5 @@ public class Cliente {
 	}
 
 }
+
 
