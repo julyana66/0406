@@ -1,4 +1,4 @@
-pacpackage cadastro;
+package cadastro;
 
 import java.util.ArrayList;
 
@@ -6,20 +6,24 @@ import basicas.Produto;
 
 public class Carrinho {
 
-
+	// o carrinho é do tipo ItemPedido(classe que contem os atributos presentes no carrinho)
 	private ArrayList<ItemPedido> carrinho = new ArrayList<ItemPedido>();
 
-
+	// quantidade
 	private int totalPedido=0;
+	//total valor
 	private double precoTotal=0;
 
-
+/*   esse método verifica se o item que o cliente pediu ja está no carrinho, caso esteja altera somente
+ * 	 a quantidade, pois não é necessário adicionar novamente o item, só mudar a quantidade, caso nao tenha
+ * 	 ainda o item ele cria um novo Itempedido.
+ */
 	public void addItemPedido(Produto prod, int qtd) {
 		if(totalPedido+qtd<10 && qtd > 0) {
 
 			boolean encontrou=false;
 
-
+			// for each para verificar se o produto ja encontra-se no carrinho
 			for (ItemPedido pedido : carrinho) {
 				if(pedido.getProduto().equals(prod)) {
 					encontrou=true;
@@ -30,11 +34,20 @@ public class Carrinho {
 
 				}
 			}
-
+			/* caso não tenha o item no carrinho ele cria um novo ItemPedido
+			 *  esse valor prod passado no parametro sera o item que o cliente escolher na lista
+			 *  por exemplo, se o cliente escolheu o item 3 - Sabonete Dove, o prod representa esse 3.
+			 *  isso pode ser verificado melhor nos metodos relacionados ao produto na classe cliente
+			 */ 
 			if(!encontrou) {
 				carrinho.add(new ItemPedido(prod,qtd));
 				System.out.println("Item adicionado ao carrinho com sucesso!!");
+				System.out.println("                              ");
+				System.out.println("                              ");
+
+				
 			}
+			// verificacao da quantidade de itens, nao permite inserir mais de 10
 			totalPedido+=qtd;
 		}else if(totalPedido+qtd> 10) {	
 
@@ -43,7 +56,10 @@ public class Carrinho {
 		recalcularPreco();
 	}
 
-
+	/* o preco total começa zerado, sempre que o cliente faz o pedido e adiciona no carrinho
+	 * a variavel precoItem recebe a quantidade do itemPedido e multiplica pelo preço do produto
+	 *  no fim, para recalcular o total do carrinho a variável precoTotal é igual ao precoItem + o precototal.
+	 */
 	public void recalcularPreco() {
 		this.precoTotal=0;
 
