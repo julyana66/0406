@@ -1,39 +1,12 @@
-package projetoav2;
+package produtos;
 
-public class Arroz extends Alimentos {
+import basicas.Alimento;
 
+public class Arroz extends Alimento  {
 
-	public static void main(String[] args) {
-
-		Alimentos Arroz = new Alimentos();
-		Arroz.setTipo("Arroz branco");
-		Arroz.setPeso("1.5kg");
-		Arroz.setCodigodebarras(002);
-		Arroz.setFabricante("AMIL");
-		Arroz.setPreco(5.00);
-		ListAlimentos.add(Arroz);
-
-
-		Alimentos ArrozArbóreo = new Alimentos();
-		ArrozArbóreo.setTipo("Arroz Arboreo");
-		ArrozArbóreo.setPeso("1.5kg");
-		ArrozArbóreo.setFabricante("RR Arroz");
-		ArrozArbóreo.setCodigodebarras(002);
-		ArrozArbóreo.setPreco(5.30);
-		ListAlimentos.add(ArrozArbóreo);
-
-		
-		for (Alimentos obj2 : ListAlimentos) {
-
-			System.out.println("--------MENU ALIMENTOS-------");
-			System.out.println("Tipo:  " + obj2.getTipo());
-			System.out.println("Fabricante:  " + obj2.getFabricante());
-			System.out.println("Peso: " + obj2.getPeso());
-			System.out.println("Preço:  " + obj2.getPreco());
-			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
-			System.out.println("--------------------------------");
-
+	public Arroz(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
 	}
+	
+}
 
-	}
-	}
