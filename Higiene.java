@@ -1,63 +1,52 @@
-package projetoav2;
+package basicas;
 
-public class Higiene extends Produtos {
-
+public abstract class Higiene extends Produto{
 	private String nome;
-	private float pesoliquido;
-	private double coddebarras;
+	private double pesoLiquido;
+	private String nCodBarras;
 
-	public Higiene(){
 
+	public Higiene(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
 	}
 
-	public Higiene(String nome,float pesoliquido,double coddebarras){
-
-		this.nome=nome;
-		this.pesoliquido=pesoliquido;
-		this.coddebarras=coddebarras;
-
-
+	public Higiene(int id, String tipo, String fabricante, double preco, String nome, double pesoLiquido, String nCodBarras) {
+		super(id, tipo, fabricante, preco);
+		this.nome = nome;
+		this.pesoLiquido = pesoLiquido;
+		this.nCodBarras = nCodBarras;
 	}
+
+	//Getters and Setters
 
 
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public float getPesoliquido() {
-		return pesoliquido;
+	public double getPesoLiquido() {
+		return pesoLiquido;
 	}
-
-	public void setPesoliquido(float pesoliquido) {
-		this.pesoliquido = pesoliquido;
+	public void setPesoLiquido(double pesoLiquido) {
+		this.pesoLiquido = pesoLiquido;
 	}
-
-	public double getCoddebarras() {
-		return coddebarras;
+	public String getnCodBarras() {
+		return nCodBarras;
 	}
-
-	public void setCoddebarras(double coddebarras) {
-		this.coddebarras = coddebarras;
+	public void setnCodBarras(String nCodBarras) {
+		this.nCodBarras = nCodBarras;
 	}
 
 
-	
-	// funcionalidades
-	
-	public float mostrarPesoLiq (float pesoliquido){
-		return getPesoliquido();
+	public void showPesoLiquido() {
+		System.out.println("Este produto contem "+getPesoLiquido()+"ml");
+	} 
 
+	public void showNCodBarras() {
+		System.out.println("O numero de codigo de barras e "+getnCodBarras());
 	}
-
-	public double mostrarcod(double coddebarras){
-		return getCoddebarras();
-
-	}
-
-
-
 }
+
+	
