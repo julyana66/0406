@@ -1,63 +1,30 @@
-package projetoav2;
+package produtos;
 
-import java.util.Scanner;
+import basicas.Eletronico;
 
-public class Tv extends Eletronicos{
+public class Tv extends Eletronico {
 	
-     public void mudarCanal (int canal)
-     {
-         int numerodocanal;
-         Scanner c = new Scanner(System.in);
-         System.out.println("digite o nº do canal?");
-         numerodocanal= c.nextInt();
-         System.out.println(numerodocanal);
+	public Tv(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+	}
 
-     }
-
-     	public void comprou(String tv)
-     	{
-     		System.out.println("TV adicionada no carrinho");
-     	}
-
-
-	public static void main(String[] args) {
-
-		Eletronicos tv = new Eletronicos();
-		tv.setTipo("Tv");
-		tv.setCor("Preta");
-		tv.setFabricante("Samsung");
-		tv.setCod(01);
-		tv.setAltura("1.50");
-		tv.setLargura("1.32");
-		tv.setPreco(1500);
-		listEletronicos.add(tv);
-
-
-		Eletronicos tv2 = new Eletronicos();
-		tv2.setTipo("Tv");
-		tv2.setCor("Prata");
-		tv2.setFabricante("LG");
-		tv2.setCod(02);
-		tv2.setAltura("1.10");
-		tv2.setLargura("1.22");
-		tv2.setPreco(1800);
-		listEletronicos.add(tv2);
-		
-		for (Eletronicos obj1 : listEletronicos) {
-
-			System.out.println("--------MENU ELETRONICOS-------");
-			System.out.println("Tipo:  " + obj1.getTipo());
-			System.out.println("Cor:  " + obj1.getCor());
-			System.out.println("Fabricante:  " + obj1.getFabricante());
-			System.out.println("Altura:  " + obj1.getAltura());
-			System.out.println("Largura:  " + obj1.getLargura());
-			System.out.println("Preço:  " + obj1.getPreco());
-			System.out.println("Nºserie:  " + obj1.getCod());
-			System.out.println("--------------------------------");
-
-		}	  
+	@Override
+	public void ligar() {
+		System.out.println("liga");
 		
 	}
+
+	@Override
+	public void desligar() {
+		System.out.println("desliga");
+		
+	}
+
+	@Override
+	public void aumentaSom() {
+		System.out.println("Aumenta som");
+	}
+
+
+
 }
-
-
