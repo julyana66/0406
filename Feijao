@@ -1,37 +1,12 @@
-package projetoav2;
+package produtos;
 
-public class Feijao extends Alimentos {
+import basicas.Alimento;
 
+public class Feijao extends Alimento {
 
-	public static void main(String[] args) {
-
-		
-		Alimentos feijao= new Alimentos();
-		feijao.setTipo(" Feijao macassar");
-		feijao.setPeso("1kg");
-		feijao.setFabricante("Turquesa");
-		feijao.setCodigodebarras(001);
-		feijao.setPreco(7.00);
-		ListAlimentos.add(feijao);
-
-		Alimentos feijaoPreto = new Alimentos();
-		feijaoPreto.setTipo("Feijao Preto");
-		feijaoPreto.setPeso("1Kg");
-		feijaoPreto.setFabricante("KI CALDO");
-		feijaoPreto.setCodigodebarras(001);
-		feijaoPreto.setPreco(7.20);
-		ListAlimentos.add(feijaoPreto);
-
-		for (Alimentos obj2 : ListAlimentos) {
-
-			System.out.println("--------MENU ALIMENTOS-------");
-			System.out.println("Tipo:  " + obj2.getTipo());
-			System.out.println("Fabricante:  " + obj2.getFabricante());
-			System.out.println("Peso: " + obj2.getPeso());
-			System.out.println("Preço:  " + obj2.getPreco());
-			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
-			System.out.println("--------------------------------");
-
+	public Feijao(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
 	}
+
 }
-}
+
