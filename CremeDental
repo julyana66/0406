@@ -1,39 +1,14 @@
-package projetoav2;
+package produtos;
 
-	public class CremeDental extends Higiene   {
+import basicas.Higiene;
 
+public class CremeDental extends Higiene{
 
-		public static void main(String[] args) {
-
-			Higiene Colgate = new Higiene();
-			Colgate.setTipo("Creme dental");
-			Colgate.setFabricante("colgate");
-			Colgate.setCoddebarras(0002);
-			Colgate.setPesoliquido(15);
-			Colgate.setPreco(1.20);
-			ListHigiene.add(Colgate);
-
-			Higiene OralB = new Higiene();
-			OralB.setTipo("Creme dental");
-			OralB.setFabricante("ORAL B");
-			OralB.setCoddebarras(0002);
-			OralB.setPesoliquido(15);
-			OralB.setPreco(1.10);
-			ListHigiene.add(OralB);	
-
-			for (Higiene obj3 : ListHigiene) {
-
-				System.out.println("--------MENU HIGIENE-------");
-				System.out.println("Tipo:  " + obj3.getTipo());
-				System.out.println("Fabricante:  " + obj3.getFabricante());
-				System.out.println("Peso liquido: " + obj3.getPesoliquido());
-				System.out.println("Preço:  " + obj3.getPreco());
-				System.out.println("Nºserie:  " + obj3.getCoddebarras());
-				System.out.println("--------------------------------");
-
-
-		}
-
+	public CremeDental(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+		// TODO Auto-generated constructor stub
 	}
-	}
+
+}
+
 
