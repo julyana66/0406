@@ -1,147 +1,55 @@
-package projetoav2;
+package basicas;
 
-public class Eletronicos extends Produtos{
 
+public abstract class Eletronico extends Produto{
+	
 	private String cor;
-	private String largura;
-	private String altura;
-	private double cod;
-	private int volume;
+	private String nSerie;
+	private int tamanho;
+
 	
-	
-	public String showProduto() {
-		return "TV" + fabricante + "com " + largura + "de largura" + " " + altura + " de altura" + " "+"código" + cod;
+	public Eletronico(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
+	}
 		
-	}
+	//Getters and Setters
 	
-
-	public Eletronicos(){
-
-	}
-
-	public Eletronicos(String cor, String largura,String altura, double cod, int volume){
-
-
-		this.cor=cor;
-		this.altura=altura;
-		this.largura=largura;
-		this.cod=cod;
-		this.volume=volume;
-
-	}
-	
-	public String getCor(){
+	public String getCor() {
 		return cor;
-
 	}
-
-	public void setCor(String cor){
+	public void setCor(String cor) {
 		this.cor = cor;
-
 	}
-
-
-	public String getAltura(){
-		return altura;
-
+	public String getnSerie() {
+		return nSerie;
 	}
-
-	public void setAltura(String altura){
-		this.altura = altura;
-
+	public void setnSerie(String nSerie) {
+		this.nSerie = nSerie;
 	}
-
-	public String getLargura(){
-		return largura;
-
-	}
-
-	public void setLargura(String largura){
-		this.largura = largura;
-
-	}
-
-	public double getCod(){
-		return cod;
-
-	}
-
-	public void setCod(double cod) {
-		this.cod = cod;
-
-	}
-
-	public int getVolume(){
-		return volume;
-
-	}
-
-	public void setVolume(int volume) {
-		this.volume = volume;
-
-	}
-
 	
-	// funcionalidades
+
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
 	
-	public boolean ligar (boolean status)
-    {
-        System.out.println("Ligado");
-        return status==true;
-    }
 	
-	 public boolean desligar (boolean status)
-     {
-     System.out.println("desligado");
-     return status;
-     }
+	public abstract void ligar();
+	
+	public abstract void desligar();
 
-     public void aumentarVolume(int volume)
-     {
-         volume++;
-         System.out.println(volume);
-     }
-
-
-     public void diminuirVolume (int volume)
-     {
-         if (volume!=0) {
-    	 volume--;
-         }
-         else { 
-        	 System.out.println("O volume é 0");
-         		}
-         
-       System.out.println(volume);
-     }
-
-
-     public int mostrarcodigo(int getcod){
-		return getcod;
-
+	public abstract void aumentaSom();
+	
+	
+	public void showTamanho() {
+		System.out.println("o tamanho deste produto e "+getTipo());
+	} 
+	
+	public void showNSerie() {
+		System.out.println("O numero de serie e "+getnSerie());
 	}
-
-	public String mostrarcor(String cor){
-		return getCor();
-
-	}
-
-	public String mostrarlargura(String largura){
-		return getLargura();
-
-	}
-
-	public String mostraraltura(String altura){
-		return getAltura();
-
-	}
-
-	public void comprou()
- 	{
-		
- 	}
-
+	
 }
+
 
 
 
