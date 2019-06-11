@@ -1,0 +1,42 @@
+package cadastro;
+
+import basicas.Produto;
+
+public class ItemPedido {
+	
+	private Produto prod;
+	private int qtd;
+	private double precoItem;
+	
+	
+	public ItemPedido(Produto prod, int qtd) {
+		super();
+		this.prod = prod;
+		this.qtd = qtd;
+	}
+	
+	public Produto getProduto() {
+		return prod;
+	}
+	
+	public void setProduto(Produto prod) {
+		this.prod = prod;
+	}
+	
+	public int getQtd() {
+		return qtd;
+	}
+	
+	public void setQtd(int qtd) {
+		this.qtd = qtd;
+	}
+
+	public double getPrecoItem() {
+		return precoItem;
+	}
+
+	public void setPrecoItem(double precoItem) {
+		this.precoItem = precoItem;
+	}
+		
+}
