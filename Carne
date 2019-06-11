@@ -1,38 +1,12 @@
-package projetoav2;
+package produtos;
 
-public class Carne extends Alimentos {
+import basicas.Alimento;
 
+public class Carne extends Alimento {
 
-	public static void main(String[] args) {
-
-		Alimentos Picanha = new Alimentos();
-		Picanha.setPeso("2kg");
-		Picanha.setCodigodebarras(003);
-		Picanha.setFabricante("Friboi");
-		Picanha.setPreco(45.00);
-		ListAlimentos.add(Picanha);
-
-
-		Alimentos Maminha= new Alimentos();
-		Maminha.setTipo("Maminha");
-		Maminha.setPeso("1kg");
-		Maminha.setCodigodebarras(003);
-		Maminha.setFabricante("Masterboi");
-		Maminha.setPreco(25.00);
-		ListAlimentos.add(Maminha);
-		
-		for (Alimentos obj2 : ListAlimentos) {
-
-			System.out.println("--------MENU ALIMENTOS-------");
-			System.out.println("Tipo:  " + obj2.getTipo());
-			System.out.println("Fabricante:  " + obj2.getFabricante());
-			System.out.println("Peso: " + obj2.getPeso());
-			System.out.println("Preço:  " + obj2.getPreco());
-			System.out.println("Nºserie:  " + obj2.getCodigodebarras());
-			System.out.println("--------------------------------");
-
-
+	public Carne(int id, String tipo, String fabricante, double preco) {
+		super(id, tipo, fabricante, preco);
 	}
 
-	}
-	}
+}
+
